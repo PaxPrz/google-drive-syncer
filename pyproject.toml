@@ -1,0 +1,40 @@
+[tool.poetry]
+name = "drive-syncer"
+version = "0.1.0"
+description = ""
+authors = ["PaxPrz <paxprajapati@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+google-api-python-client = "^1.12.8"
+google-auth-httplib2 = "^0.0.4"
+google-auth-oauthlib = "^0.4.2"
+
+[tool.poetry.dev-dependencies]
+pre-commit = "^2.9.3"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 79
+include = '\.pyi?$'
+exclude = '''
+/(
+      \.git
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.tox| \.venv
+    | _build
+    | build
+    | dist
+)/
+'''
+
+[flake8]
+ignore = E203, E266, W503, F403, F401
+max-line-length = 79
+max-complexity = 18
+select = B,C,E,F,W,T4,B9
